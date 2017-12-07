@@ -1,7 +1,7 @@
 <h1><%= @player1 %> has joined the game as Duck 1<br>
     <%= @player2 %> has joined the game as Duck 2</h1>
-<h2><%= @player1 %> : 100 HP<br>
-    <%= @player2 %> : 100 HP</h2>
+<h2><%= @player1 %> : <%= $player1.hp %> HP<br>
+    <%= @player2 %> : <%= $player2.hp %> HP</h2>
 
 <form action="/attack">
   <input type="submit" value="Attack">
