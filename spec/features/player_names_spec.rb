@@ -1,7 +1,3 @@
-require_relative '../../lib/app'
-
-require 'capybara/rspec'
-
 feature "player names" do
   scenario "player 1 enters name" do
     sign_in_and_play

@@ -1,6 +1,3 @@
-require_relative '../../lib/app'
-require 'capybara/rspec'
-
 feature "Homepage content" do
   scenario "load content on page" do
     visit('/')
