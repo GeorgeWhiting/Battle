@@ -10,7 +10,7 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(params[:player1], params[:player2])
+    $game = Game.new(Player.new(params[:player1]), Player.new(params[:player2]))
     redirect to('/play')
   end
 
@@ -25,9 +25,14 @@ class Battle < Sinatra::Base
     @player1 = $game.player1.name
     @player2 = $game.player2.name
     @game = $game
-    @game.attack(@game.player2)
-    @game.next_turn
+    @game.attack(@game.opposite(@game.current_turn))
     erb :attack
+  end
+
+  post '/switch-turns' do
+    @game = $game
+    @game.next_turn
+    redirect to('/play')
   end
 
   run! if app_file == $0

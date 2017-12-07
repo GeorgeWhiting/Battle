@@ -3,10 +3,18 @@ class Game
 attr_reader :player1, :player2
 attr_accessor :current_turn
 
-  def initialize(name1,name2)
-    @player1 = Player.new(name1)
-    @player2 = Player.new(name2)
-    @current_turn = @player1.name
+  def initialize(player1,player2)
+    @players = [player1, player2]
+
+    @current_turn = @players[0]
+  end
+
+  def player1
+    @players.first
+  end
+
+  def player2
+    @players.last
   end
 
   def attack(victim)
@@ -14,7 +22,11 @@ attr_accessor :current_turn
   end
 
   def next_turn
-    @current_turn = (@current_turn == @player1.name ? @player2.name : @player1.name)
+    @current_turn = opposite(self.current_turn)
+  end
+
+  def opposite(current_player)
+    @players.select{|player| player != current_player}.first
   end
 
 end
