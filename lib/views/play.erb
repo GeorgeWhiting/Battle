@@ -2,6 +2,7 @@
     <%= @player2 %> has joined the game as Duck 2</h1>
 <h2><%= @player1 %> : <%= @game.player1.hp %> HP<br>
     <%= @player2 %> : <%= @game.player2.hp %> HP</h2>
+<h2><%= @game.current_turn %>'s turn</h2>
 
 <form action="/attack">
   <input type="submit" value="Attack">

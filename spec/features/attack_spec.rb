@@ -4,6 +4,6 @@ feature 'attack confirmation' do
 
     click_button "Attack"
 
-    expect(page).to have_content("Varun attacked Ellie ")
+    expect(page).to have_content("George attacked Ellie ")
   end
 end

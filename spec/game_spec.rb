@@ -17,4 +17,16 @@ describe Game do
     end
   end
 
+  describe "#current_turn" do
+    it "displays the current turn" do
+      expect(game.current_turn).to eq player1.name
+    end
+  end
+
+  describe "#next_turn" do
+    it "changes the current turn to the other player" do
+      expect(game.next_turn).to eq player2.name
+    end
+  end
+
 end

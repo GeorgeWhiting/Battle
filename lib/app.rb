@@ -26,6 +26,7 @@ class Battle < Sinatra::Base
     @player2 = $game.player2.name
     @game = $game
     @game.attack(@game.player2)
+    @game.next_turn
     erb :attack
   end
 
