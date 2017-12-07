@@ -8,16 +8,9 @@ describe Player do
     end
   end
 
-  describe "#attack" do
-    it "attacks" do
-      expect(player2).to receive(:remove_hp)
-      player.attack(player2)
-    end
-  end
-
   describe "#remove_hp" do
     it "should remove hp" do
-      expect{player.attack(player2)}.to change {player2.hp}.by(-10)
+      expect{player2.remove_hp(10)}.to change {player2.hp}.by(-10)
     end
   end
 

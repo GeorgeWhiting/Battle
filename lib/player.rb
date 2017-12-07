@@ -7,10 +7,6 @@ DEFAULT_HP = 100
     @hp = hp
   end
 
-  def attack(victim)
-    victim.remove_hp(10)
-  end
-
   def remove_hp(amount)
     @hp -= amount
   end
