@@ -9,6 +9,14 @@ attr_accessor :current_turn
     @current_turn = @players[0]
   end
 
+  def self.create_game(player1, player2)
+    @game = Game.new(player1, player2)
+  end
+
+  def self.game_instance
+    @game
+  end
+
   def player1
     @players.first
   end

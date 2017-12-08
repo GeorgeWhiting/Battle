@@ -5,39 +5,39 @@ require_relative './game'
 class Battle < Sinatra::Base
   enable :sessions
 
+  before do
+    @game = Game.game_instance
+  end
+
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player1]), Player.new(params[:player2]))
+    Game.create_game(Player.new(params[:player1]), Player.new(params[:player2]))
     redirect to('/play')
   end
 
   get '/play' do
-    @player1 = $game.player1.name
-    @player2 = $game.player2.name
-    @game = $game
+    @player1 = @game.player1.name
+    @player2 = @game.player2.name
     erb :play
   end
 
   get '/attack' do
-    @player1 = $game.player1.name
-    @player2 = $game.player2.name
-    @game = $game
+    @player1 = @game.player1.name
+    @player2 = @game.player2.name
     @game.attack(@game.opposite(@game.current_turn))
     redirect to('/gameover') if @game.game_over?
     erb :attack
   end
 
   post '/switch-turns' do
-    @game = $game
     @game.next_turn
     redirect to('/play')
   end
 
   get '/gameover' do
-    @game = $game
     erb :gameover
   end
 
