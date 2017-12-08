@@ -9,8 +9,7 @@ feature 'view hit points' do
   end
   scenario 'reduces player 2s hp by 10' do
     sign_in_and_play
-    click_button "Attack"
-    click_button "Continue"
+    attack_and_continue
     expect(page).to have_content("Ellie : 90 HP")
     expect(page).not_to have_content("Ellie : 100 HP")
   end

@@ -29,4 +29,11 @@ attr_accessor :current_turn
     @players.select{|player| player != current_player}.first
   end
 
+  def game_over?
+    player1.hp <= 0 || player2.hp <= 0
+  end
+
+  def loser
+    player1.hp <= 0 ? player1 : player2
+  end
 end

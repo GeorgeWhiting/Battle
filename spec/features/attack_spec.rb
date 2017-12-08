@@ -6,8 +6,7 @@ feature 'attack confirmation' do
   end
   scenario 'received confirmation after player 2 attacks' do
     sign_in_and_play
-    click_button "Attack"
-    click_button "Continue"
+    attack_and_continue
     click_button "Attack"
     expect(page).to have_content("Ellie attacked George ")
   end

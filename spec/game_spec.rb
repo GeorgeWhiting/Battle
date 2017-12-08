@@ -1,8 +1,8 @@
 describe Game do
 
 
-  let(:player1)  { double :player1, name: "name1" }
-  let(:player2)  { double :player2, name: "name2" }
+  let(:player1)  { double :player1, name: "name1", remove_hp: nil, hp: 0 }
+  let(:player2)  { double :player2, name: "name2", hp: 0 }
   subject(:game) { described_class.new(player1,player2) }
 
   describe "#player1" do
@@ -44,6 +44,18 @@ describe Game do
   describe "#opposite" do
     it "returns whoever is the opponent of the current player" do
       expect(game.opposite(player1)).to eq player2
+    end
+  end
+
+  describe "#game_over?" do
+    it "returns true when someone reaches 0 hp" do
+      expect(game.game_over?).to eq true
+    end
+  end
+
+  describe "#loser" do
+    it "returns the loser" do
+      expect(game.loser).to eq player1
     end
   end
 end
