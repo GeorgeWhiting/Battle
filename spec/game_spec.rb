@@ -58,4 +58,16 @@ describe Game do
       expect(game.loser).to eq player1
     end
   end
+
+  describe "#game_started" do
+    it "returns false if either player is below full hp" do
+      expect(game.game_not_started?).to eq false
+    end
+
+    it "returns true if both players are at full hp" do
+      allow(player1).to receive(:hp).and_return(100)
+      allow(player2).to receive(:hp).and_return(100)
+      expect(game.game_not_started?).to eq true
+    end
+  end
 end

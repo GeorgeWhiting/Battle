@@ -44,4 +44,8 @@ attr_accessor :current_turn
   def loser
     player1.hp <= 0 ? player1 : player2
   end
+
+  def game_not_started?
+    player1.hp == 100 && player2.hp == 100
+  end
 end

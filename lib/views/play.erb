@@ -8,4 +8,4 @@
   <input type="submit" value="Attack" name="attack">
 </form>
 
-<%= @game.opposite.name %> attacked <%= @game.current_turn.name %>
+<%= "#{@game.opposite.name} attacked #{@game.current_turn.name}" unless @game.game_not_started? %>

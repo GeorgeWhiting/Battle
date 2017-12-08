@@ -15,11 +15,7 @@ class Battle < Sinatra::Base
 
   post '/names' do
     Game.create_game(Player.new(params[:player1]), Player.new(params[:player2]))
-    redirect to('/initialize')
-  end
-
-  get '/initialize' do
-    erb :initialize
+    redirect to('/play')
   end
 
   get '/play' do

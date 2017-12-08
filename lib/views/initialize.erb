@@ -1,9 +1,0 @@
-<h1><%= @game.player1.name %> has joined the game as Duck 1<br>
-    <%= @game.player2.name %> has joined the game as Duck 2</h1>
-<h2><%= @game.player1.name %> : <%= @game.player1.hp %> HP<br>
-    <%= @game.player2.name %> : <%= @game.player2.hp %> HP</h2>
-<h2><%= @game.current_turn.name %>'s turn</h2>
-
-<form action="/switch-turns" method="post">
-  <input type="submit" value="Attack" name="attack">
-</form>
