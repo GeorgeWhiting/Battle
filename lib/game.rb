@@ -26,7 +26,7 @@ attr_accessor :current_turn
   end
 
   def attack(victim)
-    victim.remove_hp(10)
+    victim.remove_hp(1+rand(10))
   end
 
   def next_turn
