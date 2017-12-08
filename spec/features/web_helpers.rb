@@ -8,5 +8,4 @@ end
 def attack_and_continue
   visit('/play')
   click_button "Attack"
-  click_button "Continue"
 end

@@ -30,11 +30,11 @@ attr_accessor :current_turn
   end
 
   def next_turn
-    @current_turn = opposite(self.current_turn)
+    @current_turn = opposite
   end
 
-  def opposite(current_player)
-    @players.select{|player| player != current_player}.first
+  def opposite
+    @players.select{|player| player != self.current_turn}.first
   end
 
   def game_over?

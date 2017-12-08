@@ -43,7 +43,7 @@ describe Game do
 
   describe "#opposite" do
     it "returns whoever is the opponent of the current player" do
-      expect(game.opposite(player1)).to eq player2
+      expect(game.opposite).to eq player2
     end
   end
 
