@@ -12,7 +12,8 @@ Challenge - Use Sinatra, RSpec and Capybara to make a battle game not too dissim
 - visit localhost:9292
 
 #### User stories 
-```As two Players,
+```
+As two Players,
 So we can play a personalised game of Battle,
 We want to Start a fight by entering our Names and seeing them
 
